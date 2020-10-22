@@ -2,6 +2,7 @@ package com.example.esercitazione1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +15,11 @@ public class MainActivity extends AppCompatActivity {
     EditText input;
     EditText nice;
     SeekBar seekbar;
+    MediaPlayer player;
     int minval = 0;
     int maxval = 100;
     int modelvalue = 50;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input);
         nice = findViewById(R.id.nice);
         seekbar = findViewById(R.id.seekbar);
+
 
         updatevalue(modelvalue);
 
@@ -65,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void updatevalue(int newvalue){
+        player = MediaPlayer.create(MainActivity.this,R.raw.nice_sound);
         if(this.seekbar.getProgress() != this.modelvalue){
             this.seekbar.setProgress(this.modelvalue);
         }
@@ -74,19 +79,13 @@ public class MainActivity extends AppCompatActivity {
         input.setText(""+this.modelvalue);
         if(modelvalue == 69){
             nice.setText("NICE");
+            player.start();
+
         } else{
             nice.setText("");
+            player.pause();
         }
     }
 
- /*
-    @Override
-    protected void onStop(){
-        super.onStop();
-        TextView helloworld = findViewById(R.id.helloworld);
-        helloworld.setText("on stop");
 
-    }
-
-  */
 }

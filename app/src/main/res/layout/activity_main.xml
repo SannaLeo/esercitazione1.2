@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/red"
+    android:background="#8AFFFC"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,77 +13,86 @@
         android:layout_height="wrap_content"
         android:textSize="36dp"
         android:text="calcolatrice"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/titolo"/>
 
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="36dp"/>
+        android:layout_height="180dp"
+        android:layout_below="@id/titolo"
+        android:id="@+id/spazio1"/>
+
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/incremento"
         android:textSize="36dp"
-        android:background="@color/white"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/input"
         android:background="@color/white"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:layout_below="@+id/spazio1"
+        android:layout_toLeftOf="@id/spazio2"/>
+
+
 
     <Space
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"/>
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/spazio1"
+        android:layout_toLeftOf="@+id/input"
+        android:id="@+id/spazio2"/>
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/input"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/spazio1"
+        android:layout_alignBaseline="@+id/incremento"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"/>
+
+    <Space
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/spazio1"
+        android:layout_toRightOf="@+id/input"
+        android:id="@+id/spazio3"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
         android:id="@+id/decremento"
-        android:textSize="36dp"/>
+        android:textSize="36dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:layout_toRightOf="@+id/spazio3"
+        android:layout_below="@+id/spazio1"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="36dp"/>
 
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekbar"
-        android:max="100"/>
+        android:max="100"
+        android:layout_centerInParent="true"/>
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"/>
+   <Space
+       android:layout_width="match_parent"
+       android:layout_height="69dp"
+       android:layout_below="@+id/seekbar"
+       android:id="@+id/spazio5"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/nice"
-        android:background="@color/white"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        android:textSize="69dp"/>
-
-
-
-
-
-
-
-
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/helloworld"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
--->
-</LinearLayout>
+   <EditText
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/nice"
+       android:background="@color/white"
+       android:layout_below="@+id/spazio5"
+       android:textSize="69dp"
+       android:textAlignment="center"
+       android:gravity="center_horizontal"
+       android:backgroundTint="#8AFFFC"/>
+</RelativeLayout>
