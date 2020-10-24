@@ -12,91 +12,88 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36dp"
-        android:text="calcolatrice"
-        android:textColor="@color/white"
+        android:text="Calcolatrice"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:id="@+id/titolo"/>
 
+    <Button
+        android:id="@+id/somma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titolo"
+        android:layout_toLeftOf="@+id/spaziocentrale"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:text="+5"
+        android:textSize="36dp"
+        app:backgroundTint="@color/blu_chiaro"/>
+
     <Space
-        android:layout_width="wrap_content"
+        android:id="@+id/spaziocentrale"
+        android:layout_width="20dp"
         android:layout_height="40dp"
-        android:layout_below="@id/titolo"
-        android:id="@+id/spazio1"/>
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/titolo"/>
+
+    <Button
+        android:id="@+id/sottrazione"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titolo"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/spaziocentrale"
+        android:background="@android:color/white"
+        android:text="-5"
+        android:textSize="36dp"
+        app:backgroundTint="@color/blu_chiaro"/>
 
 
     <Button
         android:id="@+id/incremento"
-        android:layout_width="198dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spazio1"
-        android:layout_marginRight="20dp"
-        android:background="@color/white"
+        android:layout_below="@+id/somma"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/white"
         android:text="+"
         android:textSize="36dp"
         app:backgroundTint="@color/blu_chiaro"/>
 
     <Button
         android:id="@+id/decremento"
-        android:layout_width="204dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spazio1"
-        android:layout_toRightOf="@+id/incremento"
+        android:layout_below="@+id/incremento"
+        android:layout_marginTop="40dp"
         android:background="@android:color/white"
         android:text="-"
-        android:textColor="@android:color/black"
-        android:textSize="36dp" />
+        android:textSize="36dp"
+        app:backgroundTint="@color/blu_chiaro"/>
 
-    <!--
-        <Space
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/spazio1"
-            android:layout_toLeftOf="@+id/input"
-            android:id="@+id/spazio2"/>
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/decremento"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:textSize="36dp"
+        android:textAlignment="center"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
 
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/spazio1"
-            android:layout_alignBaseline="@+id/incremento"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="341dp"
-            android:gravity="center_horizontal"
-            android:textAlignment="center" />
-
-        <Space
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/spazio1"
-            android:layout_toRightOf="@+id/input"
-            android:id="@+id/spazio3"/>
-
-
-
-
-        <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/seekbar"
-            android:max="100"
-            android:layout_centerInParent="true"/>
-
-       <Space
-           android:layout_width="match_parent"
-           android:layout_height="69dp"
-           android:layout_below="@+id/seekbar"
-           android:id="@+id/spazio5"/>
-
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:id="@+id/nice"
-           android:background="@color/white"
-           android:layout_below="@+id/spazio5"
-           android:textSize="69dp"
-           android:textAlignment="center"
-           android:gravity="center_horizontal"
-           android:backgroundTint="#8AFFFC"/>
-        -->
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input"
+        android:layout_marginTop="40dp"
+        android:textSize="36dp"
+        app:backgroundTint="@color/verde"
+        android:textColor="@color/white"
+        android:text="Reset"
+        android:textAllCaps="false"
+    />
 </RelativeLayout>
